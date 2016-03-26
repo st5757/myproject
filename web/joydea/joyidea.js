@@ -1,56 +1,56 @@
 
   (function () {
     'use strict';
-    var cards = [];
-    var checkLists = [];
-    var cardWords = new Array();
-    for (var i = 0; i < 4; i++) {
-      cardWords[i] = new Array();
-    }
-    var cardBackgraoundImgs =[];
-    var text = document.getElementById('text');
-    var btn = document.getElementsByClassName('btn');
-    var card_front = document.getElementsByClassName('card-front');
+    var mCardCount = 4;
+    var mCards = [];
+    var mBtnCount = 9;
+    var mBtnWords = new Array();
+    var mBtns =[];
+    var mCardWords = new Array();
+    var mSelected = document.getElementById('selected');
 
-    checkLists[0]="PutToOtherUse（他の使い道）";
-    checkLists[1]="Adapt(応用)";
-    checkLists[2]="Modify(修正、変更)";
-    checkLists[3]="Magnify(拡大)";
-    checkLists[4]="Minify(縮小)";
-    checkLists[5]="Substitute（代用)";
-    checkLists[6]="Rearrange(置換)";
-    checkLists[7]="Reverse（逆）";
-    checkLists[8]="Combine（結合)";
-
-    cardWords[0][0]="他の使い方はないか？";
-    cardWords[0][1]="本来の目的とは違う使い方がないか？";
-    cardWords[0][2]="置き換えてみてはどうか？";
-    cardWords[0][3]="そこに違うものが当てはまらないか？";
 
     init();
     function init() {
-      cards[0] = createCard(cardWords[0][0]);
-      cards[1] = createCard(cardWords[0][1]);
-      cards[2] = createCard(cardWords[0][2]);
-      cards[3] = createCard(cardWords[0][3]);
+      // カード群を生成
+      createCardsList();
 
+      // ボタン群を生成
+      createBtnsList(mBtnWords);
+    }
+    // カード群を生成する
+    function createCardsList() {
+
+      for (var i = 0; i < mCardCount; i++) {
+        mCardWords[i] = new Array();
+      }
+      mCardWords[0][0]="他の使い方はないか？";
+      mCardWords[0][1]="本来の目的とは違う使い方がないか？";
+      mCardWords[0][2]="置き換えてみてはどうか？";
+      mCardWords[0][3]="そこに違うものが当てはまらないか？";
+
+      for (var i = 0; i < mCardCount; i++) {
+        mCards[i] = createCard(mCardWords[0][i]);
+      }
       var i = 1;
-      while(cards.length){
-        var pos = Math.floor(Math.random()*cards.length);
+      while(mCards.length){
+        var pos = Math.floor(Math.random()*mCards.length);
         var resluts = document.getElementById('results');
-        //cardsのpos番目の要素を削除してそれを返す
-        resluts.appendChild(cards.splice(pos,1)[0]);
+        //mCardsのpos番目の要素を削除してそれを返す
+        resluts.appendChild(mCards.splice(pos,1)[0]);
         //カードに番号を振る
         var card = resluts.lastChild.lastChild;
         //cardタグの中身を取得して、#を数字に入れ替え
         card.innerHTML = resluts.lastChild.lastChild.innerHTML.replace('#',i);
         i++;
       }
+
     }
+    // カード生成
     function createCard(cardWord) {
       var inner,
-        card,
-        container;
+          card,
+          container;
 
       inner = '<div class="card-back">#</div><div class="card-front">*</div>';
       card = document.createElement('div');
@@ -67,12 +67,104 @@
 
       return container;
     }
-
+    // カードをひっくり返す仕組み
     function flipCard(card) {
       if (card.className.indexOf('open') === -1) {
                 card.className = 'card open';
             } else {
                 return;
             }
+    }
+    // ボタン群を生成する
+    function createBtnsList(btnWords) {
+
+      for (var i = 0; i < mBtnCount; i++) {
+        btnWords[i] = new Array();
+      }
+      btnWords[0][0]="PutToOtherUse（他の使い道）";
+      btnWords[0][1]="put_to_other_use";
+      btnWords[0][2]="fa-refresh";
+
+      btnWords[1][0]="Adapt(応用)";
+      btnWords[1][1]="adapt";
+      btnWords[1][2]="fa-lightbulb-o";
+
+      btnWords[2][0]="Modify(修正、変更)";
+      btnWords[2][1]="modify";
+      btnWords[2][2]="fa-exchange";
+
+      btnWords[3][0]="Magnify(拡大)";
+      btnWords[3][1]="magnify";
+      btnWords[3][2]="fa-expand";
+
+      btnWords[4][0]="Minify(縮小)";
+      btnWords[4][1]="minify";
+      btnWords[4][2]="fa-compress";
+
+      btnWords[5][0]="Substitute（代用)";
+      btnWords[5][1]="substitute";
+      btnWords[5][2]="fa-external-link";
+
+      btnWords[6][0]="Rearrange(置換)";
+      btnWords[6][1]="rearrange";
+      btnWords[6][2]="fa-pencil-square-o";
+
+      btnWords[7][0]="Reverse（逆）";
+      btnWords[7][1]="reverse";
+      btnWords[7][2]="fa-sort-alpha-desc";
+
+      btnWords[8][0]="Combine（結合)";
+      btnWords[8][1]="conbine";
+      btnWords[8][2]="fa-link";
+
+      for (var i = 0; i < mBtnCount; i++) {
+        console.log(btnWords[i]);
+        mBtns[i] = createBtn(btnWords[i]);
+      }
+      var i = 1;
+      for (var i = 0; i < mBtns.length; i++) {
+        var checks = document.getElementById('checks');
+        checks.appendChild(mBtns[i]);
+      }
+
+    }
+    // ボタン生成
+    function createBtn(btnWords) {
+      var inner,
+          btn;
+
+      inner = '<div class="btn"><i class="fa * fa-2x"></i></div>';
+      btn = document.createElement('div');
+      btn.className = 'btn-container '+ btnWords[1];
+      btn.addEventListener('click',function () {
+        console.log('click_btn');
+        //seletedクラスの子要素の全てを削除
+        while (selected.firstChild) selected.removeChild(selected.firstChild)
+
+        selected.appendChild(createSelectIcon(btnWords));
+
+      });
+      btn.innerHTML = inner.replace('*',btnWords[2]);
+      return btn;
+    }
+
+    // 選択した項目表示を生成
+    function createSelectIcon(btnWords) {
+      var inner,
+          icon,
+          container;
+
+      inner = '<i class="fa '+
+              btnWords[2]+
+              ' fa-2x"></i><p>'+
+              btnWords[0]+
+              '</p>';
+      icon = document.createElement('div');
+      icon.className = 'icon';
+      icon.innerHTML = inner;
+      container = document.createElement('div');
+      container.className = 'icon-container';
+      container.appendChild(icon);
+      return container;
     }
   })();
