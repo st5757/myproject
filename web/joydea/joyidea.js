@@ -50,41 +50,50 @@
       for (var i = 0; i < mBtnCount; i++) {
         btnWords[i] = new Array();
       }
-      btnWords[0][0]="PutToOtherUse（他の使い道）";
-      btnWords[0][1]="put_to_other_use";
-      btnWords[0][2]="fa-refresh";
+      btnWords[0][0]="1";
+      btnWords[0][1]="PutToOtherUse（転用）";
+      btnWords[0][2]="put_to_other_use";
+      btnWords[0][3]="fa-refresh";
 
-      btnWords[1][0]="Adapt(応用)";
-      btnWords[1][1]="adapt";
-      btnWords[1][2]="fa-lightbulb-o";
+      btnWords[1][0]="2";
+      btnWords[1][1]="Adapt(応用)";
+      btnWords[1][2]="adapt";
+      btnWords[1][3]="fa-lightbulb-o";
 
-      btnWords[2][0]="Modify(修正、変更)";
-      btnWords[2][1]="modify";
-      btnWords[2][2]="fa-exchange";
+      btnWords[2][0]="3";
+      btnWords[2][1]="Modify(修正、変更)";
+      btnWords[2][2]="modify";
+      btnWords[2][3]="fa-exchange";
 
-      btnWords[3][0]="Magnify(拡大)";
-      btnWords[3][1]="magnify";
-      btnWords[3][2]="fa-expand";
+      btnWords[3][0]="4";
+      btnWords[3][1]="Magnify(拡大)";
+      btnWords[3][2]="magnify";
+      btnWords[3][3]="fa-expand";
 
-      btnWords[4][0]="Minify(縮小)";
-      btnWords[4][1]="minify";
-      btnWords[4][2]="fa-compress";
+      btnWords[4][0]="5";
+      btnWords[4][1]="Minify(縮小)";
+      btnWords[4][2]="minify";
+      btnWords[4][3]="fa-compress";
 
-      btnWords[5][0]="Substitute（代用)";
-      btnWords[5][1]="substitute";
-      btnWords[5][2]="fa-external-link";
+      btnWords[5][0]="6";
+      btnWords[5][1]="Substitute（代用)";
+      btnWords[5][2]="substitute";
+      btnWords[5][3]="fa-external-link";
 
-      btnWords[6][0]="Rearrange(置換)";
-      btnWords[6][1]="rearrange";
-      btnWords[6][2]="fa-pencil-square-o";
+      btnWords[6][0]="7";
+      btnWords[6][1]="Rearrange(置換)";
+      btnWords[6][2]="rearrange";
+      btnWords[6][3]="fa-pencil-square-o";
 
-      btnWords[7][0]="Reverse（逆）";
-      btnWords[7][1]="reverse";
-      btnWords[7][2]="fa-sort-alpha-desc";
+      btnWords[7][0]="8";
+      btnWords[7][1]="Reverse（逆）";
+      btnWords[7][2]="reverse";
+      btnWords[7][3]="fa-sort-alpha-desc";
 
-      btnWords[8][0]="Combine（結合)";
-      btnWords[8][1]="conbine";
-      btnWords[8][2]="fa-link";
+      btnWords[8][0]="9";
+      btnWords[8][1]="Combine（結合)";
+      btnWords[8][2]="conbine";
+      btnWords[8][3]="fa-link";
 
       for (var i = 0; i < mBtnCount; i++) {
         console.log(btnWords[i]);
