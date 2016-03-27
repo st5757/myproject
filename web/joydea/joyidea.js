@@ -8,6 +8,7 @@
     var mBtns =[];
     var mCardWords = new Array();
     var mSelected = document.getElementById('selected');
+    var mResluts = document.getElementById('results');
 
 
     init();
@@ -34,15 +35,6 @@
       mCardWords[1][2]="似たような業界はないか？";
       mCardWords[1][3]="真似してみたらどうか？";
 
-      return container;
-    }
-    // カードをひっくり返す仕組み
-    function flipCard(card) {
-      if (card.className.indexOf('open') === -1) {
-                card.className = 'card open';
-            } else {
-                return;
-            }
     }
     // ボタン群を生成する
     function createBtnsList(btnWords) {
@@ -106,23 +98,30 @@
       }
 
     }
+
     // ボタン生成
-    function createBtn(btnWords) {
+    function createBtn(btnWord) {
       var inner,
           btn;
 
       inner = '<div class="btn"><i class="fa * fa-2x"></i></div>';
       btn = document.createElement('div');
-      btn.className = 'btn-container '+ btnWords[1];
+      btn.className = 'btn-container '+ btnWord[2];
       btn.addEventListener('click',function () {
         console.log('click_btn');
+        console.log(btnWord);
         //seletedクラスの子要素の全てを削除
-        while (selected.firstChild) selected.removeChild(selected.firstChild)
+        while (selected.firstChild) selected.removeChild(selected.firstChild);
+        //カードを削除
+        while(mResluts.firstChild) mResluts.removeChild(mResluts.firstChild);
 
-        selected.appendChild(createSelectIcon(btnWords));
+        // 選択したボタンをアイコンで表示
+        selected.appendChild(createSelectIcon(btnWord));
+        // カード群を生成
+        createCardsList(btnWord);
 
       });
-      btn.innerHTML = inner.replace('*',btnWords[2]);
+      btn.innerHTML = inner.replace('*',btnWord[3]);
       return btn;
     }
 
@@ -133,9 +132,9 @@
           container;
 
       inner = '<i class="fa '+
-              btnWords[2]+
+              btnWords[3]+
               ' fa-2x"></i><p>'+
-              btnWords[0]+
+              btnWords[1]+
               '</p>';
       icon = document.createElement('div');
       icon.className = 'icon';
@@ -145,4 +144,55 @@
       container.appendChild(icon);
       return container;
     }
-  })();
+
+    // カード群を生成する
+    function createCardsList(btnWord) {
+
+      for (var i = 0; i < mCardCount; i++) {
+        mCards[i] = createCard(mCardWords[btnWord[0]-1][i]);
+      }
+      var i = 1;
+      while(mCards.length){
+        var pos = Math.floor(Math.random()*mCards.length);
+        //mCardsのpos番目の要素を削除してそれを返す
+        mResluts.appendChild(mCards.splice(pos,1)[0]);
+        //カードに番号を振る
+        var card = mResluts.lastChild.lastChild;
+        //cardタグの中身を取得して、#を数字に入れ替え
+        card.innerHTML = mResluts.lastChild.lastChild.innerHTML.replace('#',i);
+        i++;
+      }
+
+    }
+
+    // カード生成
+    function createCard(cardWord) {
+      var inner,
+          card,
+          container;
+
+      inner = '<div class="card-back">#</div><div class="card-front">*</div>';
+      card = document.createElement('div');
+      card.className = 'card';
+      card.addEventListener('click',function () {
+        console.log('click');
+        flipCard(this);
+      });
+      card.innerHTML =inner.replace('*',cardWord);
+
+      container =document.createElement('div');
+      container.className = 'card-container';
+      container.appendChild(card);
+
+      return container;
+    }
+
+    // カードをひっくり返す仕組み
+    function flipCard(card) {
+      if (card.className.indexOf('open') === -1) {
+                card.className = 'card open';
+            } else {
+                return;
+            }
+    }
+})();
