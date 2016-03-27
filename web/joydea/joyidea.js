@@ -12,58 +12,27 @@
 
     init();
     function init() {
-      // カード群を生成
-      createCardsList();
-
+      //カードの中身定義
+      defineCardwords();
       // ボタン群を生成
       createBtnsList(mBtnWords);
+
     }
-    // カード群を生成する
-    function createCardsList() {
+    // カードの中身定義
+    function defineCardwords() {
 
       for (var i = 0; i < mCardCount; i++) {
         mCardWords[i] = new Array();
       }
       mCardWords[0][0]="他の使い方はないか？";
       mCardWords[0][1]="本来の目的とは違う使い方がないか？";
-      mCardWords[0][2]="置き換えてみてはどうか？";
-      mCardWords[0][3]="そこに違うものが当てはまらないか？";
+      mCardWords[0][2]="転用できないか？";
+      mCardWords[0][3]="世の中には「他の使い方」で製品化してるものはないか？";
 
-      for (var i = 0; i < mCardCount; i++) {
-        mCards[i] = createCard(mCardWords[0][i]);
-      }
-      var i = 1;
-      while(mCards.length){
-        var pos = Math.floor(Math.random()*mCards.length);
-        var resluts = document.getElementById('results');
-        //mCardsのpos番目の要素を削除してそれを返す
-        resluts.appendChild(mCards.splice(pos,1)[0]);
-        //カードに番号を振る
-        var card = resluts.lastChild.lastChild;
-        //cardタグの中身を取得して、#を数字に入れ替え
-        card.innerHTML = resluts.lastChild.lastChild.innerHTML.replace('#',i);
-        i++;
-      }
-
-    }
-    // カード生成
-    function createCard(cardWord) {
-      var inner,
-          card,
-          container;
-
-      inner = '<div class="card-back">#</div><div class="card-front">*</div>';
-      card = document.createElement('div');
-      card.className = 'card';
-      card.addEventListener('click',function () {
-        console.log('click');
-        flipCard(this);
-      });
-      card.innerHTML =inner.replace('*',cardWord);
-
-      container =document.createElement('div');
-      container.className = 'card-container';
-      container.appendChild(card);
+      mCardWords[1][0]="応用したら使えないか？";
+      mCardWords[1][1]="他のところに同じようなアイデアはないか？";
+      mCardWords[1][2]="似たような業界はないか？";
+      mCardWords[1][3]="真似してみたらどうか？";
 
       return container;
     }
