@@ -1,6 +1,6 @@
 body{
   margin: 0 80px;
-  background: #eee;
+  background: #fafafa;
   font-family:Arial, sans-serif;
   text-align: center;
 }
@@ -68,6 +68,8 @@ body{
   position: absolute;
   transform-style: preserve-3d;
   transition: transform .8s;
+  border-radius:15px;
+  box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50);
 }
 .card.open{
   transform: rotateY(180deg);
