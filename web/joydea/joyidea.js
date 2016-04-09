@@ -151,6 +151,8 @@
 
         // 選択したボタンをアイコンで表示
         selected.appendChild(createSelectIcon(btnWord));
+        selected.appendChild(createSelectIconText(btnWord));
+
         // カード群を生成
         createCardsList(btnWord);
 
@@ -160,23 +162,36 @@
     }
 
     // 選択した項目表示を生成
-    function createSelectIcon(btnWords) {
+    function createSelectIcon(btnWord) {
       var inner,
           icon,
           container;
-
+      // 選択したボタンのアイコン
       inner = '<i class="fa '+
-              btnWords[3]+
-              ' fa-2x"></i><p>'+
-              btnWords[1]+
-              '</p>';
+              btnWord[3]+
+              ' fa-2x"></i>';
       icon = document.createElement('div');
       icon.className = 'icon';
       icon.innerHTML = inner;
+
       container = document.createElement('div');
       container.className = 'icon-container';
       container.appendChild(icon);
+
       return container;
+    }
+    //選択した項目テキストを生成
+    function createSelectIconText(btnWord) {
+      var inner,
+          icon_text,
+
+          // アイコンの説明テキスト
+          inner = '<p>'+btnWord[1]+'</p>'
+          icon_text = document.createElement('div');
+          icon_text.className='icon_text';
+          icon_text.innerHTML = inner;
+
+          return icon_text;
     }
 
     // カード群を生成する
@@ -205,7 +220,7 @@
           card,
           container;
 
-      inner = '<div class="card-back">#</div><div class="card-front">*</div>';
+      inner = '<div class="card-back">#</div><div class="card-front"><div class="card-front-inner">*</div></div>';
       card = document.createElement('div');
       card.className = 'card';
       card.addEventListener('click',function () {
