@@ -27,44 +27,48 @@
       }
       mCardWords[0][0]="他の使い方はないか？";
       mCardWords[0][1]="本来の目的とは違う使い方がないか？";
-      mCardWords[0][2]="転用できないか？";
+      mCardWords[0][2]="転用できないか？<br>全部を、部品を、メンバーを、資金を";
       mCardWords[0][3]="世の中には「他の使い方」で製品化してるものはないか？";
 
-      mCardWords[1][0]="応用したら使えないか？";
+      mCardWords[1][0]="応用した製品例と同じように考えられないか？";
       mCardWords[1][1]="他のところに同じようなアイデアはないか？";
       mCardWords[1][2]="似たような業界はないか？";
       mCardWords[1][3]="真似してみたらどうか？";
 
-      mCardWords[2][0]="一部を変えてみたらどうか？形を・天気を・時間を・決定を";
-      mCardWords[2][1]="変更してみたらどうか？必需品を・季節を・速さを・決まりを";
-      mCardWords[2][2]="修正してみたらどうか？価格を・角度を・年齢を・マニュアルを";
+      mCardWords[2][0]="一部を変えてみたらどうか？<br>形を・天気を・時間を・決定を";
+      mCardWords[2][1]="変更してみたらどうか？<br>必需品を・季節を・速さを・決まりを";
+      mCardWords[2][2]="修正してみたらどうか？<br>価格を・角度を・年齢を・マニュアルを";
+      mCardWords[2][3]="いつも修正しないところに目を向けてみたらどうか？";
 
-      mCardWords[3][0]="大きくしてみたらどうか？サイズを・長さを・悪い部分を";
-      mCardWords[3][1]="増やしてみたらどうか？コストを・人数を・商品数を";
-      mCardWords[3][2]="拡張してみたらどうか？規模を・力を・幅を";
-      mCardWords[3][3]="拡大してみたらどうか？地域を・時間を・深さを";
+      mCardWords[3][0]="大きくしてみたらどうか？<br>サイズを・長さを・悪い部分を";
+      mCardWords[3][1]="増やしてみたらどうか？<br>コストを・人数を・商品数を";
+      mCardWords[3][2]="拡張してみたらどうか？<br>規模を・力を・幅を";
+      mCardWords[3][3]="拡大してみたらどうか？<br>地域を・時間を・深さを";
 
-      mCardWords[4][0]="小さくしてみたらどうか？必要だと思ってるものを・範囲を・利害関係を";
-      mCardWords[4][1]="減らしてみたらどうか？クオリティを・お客さんを・商品数を";
-      mCardWords[4][2]="低くしてみたらどうか？温度を・高さを";
-      mCardWords[4][3]="縮小してみたらどうか？地域を・時間を・深さを";
+      mCardWords[4][0]="小さくしてみたらどうか？<br>必要だと思ってるものを・範囲を・利害関係を";
+      mCardWords[4][1]="減らしてみたらどうか？<br>クオリティを・お客さんを・商品数を";
+      mCardWords[4][2]="低くしてみたらどうか？<br>温度を・高さを";
+      mCardWords[4][3]="縮小してみたらどうか？<br>地域を・時間を・深さを";
 
-      mCardWords[5][0]="他のもので代用できないか？";
+      mCardWords[5][0]="「あの人だったら」代わりに何を使うだろうか？";
       mCardWords[5][1]="代理人はいないか？";
       mCardWords[5][2]="全く違う用途のもので近い材料や人材はないか？";
       mCardWords[5][3]="違う業界で似たものを使っていないか？";
 
-      mCardWords[6][0]="入れ替えてみたらどうか？順番を・メンバーを・世代を";
+      mCardWords[6][0]="入れ替えてみたらどうか？<br>順番を・メンバーを・世代を";
       mCardWords[6][1]="置き換えてみたらどうか？<br>別の言葉で・別のジャンルで・思いついた業界で";
-      mCardWords[6][2]="アレンジし直してみたらどうか？仕組みを・揃えた物を・階層を・良いと思っているものを";
+      mCardWords[6][2]="アレンジし直してみたらどうか？<br>仕組みを・揃えた物を・階層を・良いと思っているものを";
+      mCardWords[6][3]="いつも入れ替えない部分に目を向けてみたらどうか？";
 
       mCardWords[7][0]="逆にしてみたらどうか？<br>向きを・その「上下」を・お客さんを気持ちを";
       mCardWords[7][1]="裏や反対は使えないか？<br>意見の・善悪の・地位の・あなたの意思の";
-      mCardWords[7][2]="くつがえしたり、転倒させられないか？<br>感情を・行動を・決定を・今までのストーリーを";
+      mCardWords[7][2]="転倒させられないか？<br>感情を・行動を・決定を・今までのストーリーを";
+      mCardWords[7][3]="くつがえすことはできないか？";
 
       mCardWords[8][0]="組み合わせてみたらどうか？<br>敵を・異なる業界を・上下か、左右かに";
       mCardWords[8][1]="兼ねることはできないか？<br>技を・ジャンルを・知識を・あの人とあの人を";
       mCardWords[8][2]="結びつけてみたらどうか？<br>人を・決定を・行動を";
+      mCardWords[8][3]="足すだけではなく、倍増させるという考え方はできないか？";
 
     }
     // ボタン群を生成する
@@ -74,52 +78,51 @@
         btnWords[i] = new Array();
       }
       btnWords[0][0]="1";
-      btnWords[0][1]="PutToOtherUse（転用）";
+      btnWords[0][1]="PutToOtherUse　（　転用できないか？　）";
       btnWords[0][2]="put_to_other_use";
       btnWords[0][3]="fa-refresh";
 
       btnWords[1][0]="2";
-      btnWords[1][1]="Adapt(応用)";
+      btnWords[1][1]="Adapt　(　応用してみたらどうか？　)";
       btnWords[1][2]="adapt";
       btnWords[1][3]="fa-lightbulb-o";
 
       btnWords[2][0]="3";
-      btnWords[2][1]="Modify(修正)";
+      btnWords[2][1]="Modify　(　修正してみたらどうだろうか？　)";
       btnWords[2][2]="modify";
       btnWords[2][3]="fa-exchange";
 
       btnWords[3][0]="4";
-      btnWords[3][1]="Magnify(拡大)";
+      btnWords[3][1]="Magnify　(　拡大できないだろうか？　)";
       btnWords[3][2]="magnify";
       btnWords[3][3]="fa-expand";
 
       btnWords[4][0]="5";
-      btnWords[4][1]="Minify(縮小)";
+      btnWords[4][1]="Minify　(　縮小できないだろうか？　)";
       btnWords[4][2]="minify";
       btnWords[4][3]="fa-compress";
 
       btnWords[5][0]="6";
-      btnWords[5][1]="Substitute（代用)";
+      btnWords[5][1]="Substitute　（　代用してみたらどうだろう？　)";
       btnWords[5][2]="substitute";
       btnWords[5][3]="fa-external-link";
 
       btnWords[6][0]="7";
-      btnWords[6][1]="Rearrange(置換)";
+      btnWords[6][1]="Rearrange　(　置き換えられないか？　)";
       btnWords[6][2]="rearrange";
       btnWords[6][3]="fa-pencil-square-o";
 
       btnWords[7][0]="8";
-      btnWords[7][1]="Reverse（逆）";
+      btnWords[7][1]="Reverse　（　逆にしたらどうか？　）";
       btnWords[7][2]="reverse";
       btnWords[7][3]="fa-sort-alpha-desc";
 
       btnWords[8][0]="9";
-      btnWords[8][1]="Combine（結合)";
+      btnWords[8][1]="Combine　（　結びつけてみたらどうか？　)";
       btnWords[8][2]="conbine";
       btnWords[8][3]="fa-link";
 
       for (var i = 0; i < mBtnCount; i++) {
-        console.log(btnWords[i]);
         mBtns[i] = createBtn(btnWords[i]);
       }
       var i = 1;
