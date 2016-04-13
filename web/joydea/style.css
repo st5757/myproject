@@ -99,4 +99,6 @@ body{
 .card-front-inner{
   margin: 20px;
   text-align: left;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
