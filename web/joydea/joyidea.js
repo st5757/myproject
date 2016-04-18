@@ -78,7 +78,7 @@
         btnWords[i] = new Array();
       }
       btnWords[0][0]="1";
-      btnWords[0][1]="PutToOtherUse　（　転用できないか？　）";
+      btnWords[0][1]="PutToOtherUse（ 転用できない？ ）";
       btnWords[0][2]="put_to_other_use";
       btnWords[0][3]="fa-refresh";
 
@@ -88,7 +88,7 @@
       btnWords[1][3]="fa-lightbulb-o";
 
       btnWords[2][0]="3";
-      btnWords[2][1]="Modify　(　修正してみたらどうだろうか？　)";
+      btnWords[2][1]="Modify　(　修正してみたらどうか？　)";
       btnWords[2][2]="modify";
       btnWords[2][3]="fa-exchange";
 
@@ -103,7 +103,7 @@
       btnWords[4][3]="fa-compress";
 
       btnWords[5][0]="6";
-      btnWords[5][1]="Substitute　（　代用してみたらどうだろう？　)";
+      btnWords[5][1]="Substitute　（　代用してみたら？　)";
       btnWords[5][2]="substitute";
       btnWords[5][3]="fa-external-link";
 
@@ -118,7 +118,7 @@
       btnWords[7][3]="fa-sort-alpha-desc";
 
       btnWords[8][0]="9";
-      btnWords[8][1]="Combine　（　結びつけてみたらどうか？　)";
+      btnWords[8][1]="Combine　（　結びつけてみたら？　)";
       btnWords[8][2]="conbine";
       btnWords[8][3]="fa-link";
 
