@@ -155,6 +155,8 @@
 
         // カード群を生成
         createCardsList(btnWord);
+        $('.card').hide();
+        $('.card').show(800);
 
       });
       btn.innerHTML = inner.replace('*',btnWord[3]);
