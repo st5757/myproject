@@ -44,6 +44,7 @@ body{
   color:#ccc;
   text-align: center;
   width: 100%;
+  font-size: 16px;
 }
 .fa{
   line-height: 60px;
@@ -98,6 +99,12 @@ body{
   margin: 8px;
   text-align: left;
 }
+#footer{
+  text-align: center;
+  color:#ccc;
+  margin: 20px auto;
+  font-size: 12px;
+}
 /* PCの場合 */
 @media all and (min-width: 768px){
   #logo{
@@ -126,6 +133,9 @@ body{
   .icon{
     display: block;
   }
+  .icon_text{
+    font-size: 20px;
+  }
   .fa{
     line-height: 80px;
   }
@@ -152,5 +162,7 @@ body{
   .card-front-inner{
     margin: 20px;
   }
-
+  #footer{
+    font-size: 16px;
+  }
 }
